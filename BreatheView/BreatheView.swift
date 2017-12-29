@@ -131,13 +131,10 @@ private extension BreatheView {
     }
     
     func calculateArcCenter(for nodeIndex: Int, radius: CGFloat) -> CGPoint {
-        /* let 'a' be the angle, (x, y) the center point and r the radius:
-         * (x + r * cos(a), y + r * sin(a))
+        /* let (x, y) be the frames's center point
+         * formula: (x + layerRadius * cos(angle), y + layerRadius * sin(angle))
          */
-        let count = CGFloat(nodesCount)
-        
-        let a = (pi * 2) * CGFloat(nodeIndex + 1) / count
-        
+        let a = (pi * 2) * CGFloat(nodeIndex + 1) / CGFloat(nodesCount)
         let x = frame.center.x
         let y = frame.center.y
         
@@ -153,11 +150,7 @@ private extension BreatheView {
         }
         let red  = (CGFloat(nodeIndex) / CGFloat(nodesCount - 1)) * rgb[0]
         let blue = (CGFloat(nodeIndex) / CGFloat(nodesCount - 1)) * rgb[2]
-        
-        return UIColor(red: red,
-                       green: rgb[1],
-                       blue: blue,
-                       alpha: Constant.opacity).cgColor
+        return UIColor(red: red, green: rgb[1], blue: blue, alpha: Constant.opacity).cgColor
     }
 }
 
