@@ -19,7 +19,7 @@ public final class BreatheView: UIView {
     
     private var nodeExpandedPaths = [Int: UIBezierPath]()
     
-    private lazy var nodeShrinkedPath: UIBezierPath = calculateShrinkedNodeFinalPath()
+    private lazy var nodeShrinkedPath: UIBezierPath = calculateShrinkedNodePath()
     
     private lazy var layerRadius: CGFloat = {
         return min(bounds.width, bounds.height) / 4
@@ -121,7 +121,7 @@ private extension BreatheView {
         return nodeBezierPath
     }
     
-    func calculateShrinkedNodeFinalPath() -> UIBezierPath {
+    func calculateShrinkedNodePath() -> UIBezierPath {
         let nodeBezierPath = UIBezierPath(arcCenter: bounds.center,
                                           radius: layerRadius * Constant.scaleRatio,
                                           startAngle: 0.0,
@@ -161,7 +161,6 @@ private extension BreatheView {
     }
 }
 
-// MARK: - Animations
 private extension BreatheView {
     func createScaleAnimation(index: Int) -> CABasicAnimation {
         let pathScale = CABasicAnimation(keyPath: "path")
