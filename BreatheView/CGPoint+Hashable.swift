@@ -12,7 +12,7 @@ import UIKit
  * more: https://stackoverflow.com/questions/32988665/is-there-a-specific-way-to-use-tuples-as-set-elements-in-swift
  */
 extension CGPoint: Hashable {
-    var hashValue: Int {
+    public var hashValue: Int {
         return (x.hashValue << MemoryLayout<CGFloat>.size) ^ y.hashValue
     }
 }
