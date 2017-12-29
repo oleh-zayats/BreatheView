@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal let pi = CGFloat(Double.pi) // pi is approx. equal to 3.14159265359
-internal func radians(fromDegrees degrees: CGFloat) -> CGFloat {
+let pi = CGFloat(Double.pi)
+func radians(fromDegrees degrees: CGFloat) -> CGFloat {
     return (pi * degrees) / 180.0
 }

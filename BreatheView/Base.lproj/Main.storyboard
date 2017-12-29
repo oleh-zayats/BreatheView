@@ -26,27 +26,27 @@
                                     <constraint firstAttribute="height" constant="240" id="mlx-8L-hTl"/>
                                 </constraints>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="4" maxValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="B1f-U7-CSF">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="5" maxValue="16" translatesAutoresizingMaskIntoConstraints="NO" id="B1f-U7-CSF">
                                 <rect key="frame" x="85" y="541" width="204" height="31"/>
-                                <color key="tintColor" red="0.45923400486873484" green="0.67134218422849745" blue="0.63108500317720972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="FOF-mC-jSv"/>
                                 </constraints>
-                                <color key="thumbTintColor" red="0.60711184894023074" green="1" blue="0.81795707049215061" alpha="0.55878631161971826" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" white="1" alpha="0.85002200699999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="nodesSliderDidChangeValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="0t8-yy-qQM"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jO-aP-Ihq">
                                 <rect key="frame" x="112" y="591" width="150" height="38"/>
-                                <color key="backgroundColor" red="0.60711184890000003" green="1" blue="0.81795707049999999" alpha="0.55878631160000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="N40-Kj-MUW"/>
                                     <constraint firstAttribute="height" constant="38" id="Wb3-ak-IR5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Start">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="0.8500220070422535" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="animationsButtonDidTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qBI-nn-Btr"/>

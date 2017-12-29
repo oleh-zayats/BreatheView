@@ -13,15 +13,14 @@ public final class BreatheView: UIView {
     private enum Constant {
         static let animationDuration = 3.55
         static let scaleRatio: CGFloat = 0.1
-        static let opacity: CGFloat = 0.5
-        static let startColor = UIColor(hex: 0x1DE1F7)
+        static let opacity: CGFloat = 0.65
     }
     
     private var nodeExpandedPaths = [Int: UIBezierPath]()
     
     private lazy var nodeShrinkedPath: UIBezierPath = calculateShrinkedNodePath()
     
-    private lazy var layerRadius: CGFloat = {
+    private lazy var radius: CGFloat = {
         return min(bounds.width, bounds.height) / 4
     }()
     
@@ -33,6 +32,7 @@ public final class BreatheView: UIView {
     
     private var nodesCount: Int = 0 {
         didSet {
+            stopAnimations()
             makeNodes()
         }
     }
@@ -64,14 +64,15 @@ public final class BreatheView: UIView {
     
     public func startAnimations() {
         _isAnimating = true
-        
+
         for index in 0..<nodesCount {
             if let node = nodes[index] {
-                let scale = createScaleAnimation(index: index)
+                let scale = makeScaleAnimation(index: index)
                 node.add(scale, forKey: "scale.animation")
             }
         }
-        let rotation = createRotationAnimation()
+        
+        let rotation = makeRotationAnimation()
         layer.add(rotation, forKey: "rotation.animation")
     }
     
@@ -106,15 +107,15 @@ private extension BreatheView {
         layer.sublayers?.removeAll()
         
         nodes.forEach { node in
-            node.value.compositingFilter = "colorBlendMode"
+            node.value.compositingFilter = "screenBlendMode"
             layer.addSublayer(node.value)
         }
     }
     
     func calculateExpandedNodePath(for nodeIndex: Int) -> UIBezierPath {
-        let nodeArcCenter = calculateArcCenter(for: nodeIndex, radius: layerRadius)
+        let nodeArcCenter = calculateArcCenter(for: nodeIndex)
         let nodeBezierPath = UIBezierPath(arcCenter: nodeArcCenter,
-                                          radius: layerRadius,
+                                          radius: radius,
                                           startAngle: 0.0,
                                           endAngle: pi * 2.0,
                                           clockwise: true)
@@ -123,65 +124,59 @@ private extension BreatheView {
     
     func calculateShrinkedNodePath() -> UIBezierPath {
         let nodeBezierPath = UIBezierPath(arcCenter: bounds.center,
-                                          radius: layerRadius * Constant.scaleRatio,
+                                          radius: radius * Constant.scaleRatio,
                                           startAngle: 0.0,
                                           endAngle: pi * 2.0,
                                           clockwise: true)
         return nodeBezierPath
     }
     
-    func calculateArcCenter(for nodeIndex: Int, radius: CGFloat) -> CGPoint {
+    func calculateArcCenter(for nodeIndex: Int) -> CGPoint {
         /* let (x, y) be the frames's center point
          * formula: (x + layerRadius * cos(angle), y + layerRadius * sin(angle))
          */
         let a = (pi * 2) * CGFloat(nodeIndex + 1) / CGFloat(nodesCount)
         let x = frame.center.x
         let y = frame.center.y
-        
         let xPos = x + radius * cos(a)
         let yPos = y + radius * sin(a)
-        
         return CGPoint(x: xPos, y: yPos)
     }
     
     func calculateFillColor(for nodeIndex: Int) -> CGColor {
-        guard let rgb = Constant.startColor.cgColor.components else {
-            return Constant.startColor.cgColor
-        }
-        let red  = (CGFloat(nodeIndex) / CGFloat(nodesCount - 1)) * rgb[0]
-        let blue = (CGFloat(nodeIndex) / CGFloat(nodesCount - 1)) * rgb[2]
-        return UIColor(red: red, green: rgb[1], blue: blue, alpha: Constant.opacity).cgColor
+        let blueStartValue: CGFloat = 160.0
+        let blueEndValue: CGFloat = 240.0
+        let adjustmentValue = CGFloat((blueEndValue - blueStartValue) / CGFloat(nodesCount) * CGFloat(nodeIndex + 1))
+        let blue = (blueStartValue + adjustmentValue) / 255
+        return UIColor(red: 100/255,
+                     green: 190/255,
+                      blue: blue,
+                     alpha: Constant.opacity).cgColor
     }
 }
 
 private extension BreatheView {
-    func createScaleAnimation(index: Int) -> CABasicAnimation {
+    func makeScaleAnimation(index: Int) -> CABasicAnimation {
         let pathScale = CABasicAnimation(keyPath: "path")
-        let fromPath: UIBezierPath? = nodeExpandedPaths[index]
-        let toPath: UIBezierPath = nodeShrinkedPath
-        
-        pathScale.fromValue = fromPath?.cgPath
-        pathScale.toValue = toPath.cgPath
-        
+        pathScale.fromValue = nodeExpandedPaths[index]?.cgPath
+        pathScale.toValue = nodeShrinkedPath.cgPath
         pathScale.fillMode = kCAFillModeForwards
         pathScale.isRemovedOnCompletion = false
-        
         pathScale.duration = Constant.animationDuration
         pathScale.repeatDuration = .infinity
         pathScale.autoreverses = true
-        pathScale.timingFunction = CAMediaTimingFunction(name: .quad, controlType: .inOut)
-        
+        pathScale.timingFunction = CAMediaTimingFunction(curveType: .quad, controlType: .inOut)
         return pathScale
     }
     
-    func createRotationAnimation() -> CABasicAnimation {
+    func makeRotationAnimation() -> CABasicAnimation {
         let rotation = CABasicAnimation(keyPath: "transform.rotation")
         rotation.fromValue = 0.0
         rotation.toValue = -pi * 2
         rotation.duration = Constant.animationDuration
         rotation.repeatDuration = .infinity
         rotation.autoreverses = true
-        rotation.timingFunction = CAMediaTimingFunction(name: .quad, controlType: .inOut)
+        rotation.timingFunction = CAMediaTimingFunction(curveType: .quad, controlType: .inOut)
         return rotation
     }
 }

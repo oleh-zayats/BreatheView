@@ -8,23 +8,21 @@
 
 import UIKit
 
-internal enum CustomMediaTimingFunctionName {
+/* More about Easing Curves: http://easings.net/en
+ */
+enum EasingCurveType {
     case sine, quad, cubic, quart, quint, exp, circ, back
 }
 
-internal enum ControlType {
+enum ControlType {
     case `in`, out, inOut
 }
 
-internal extension CAMediaTimingFunction {
-    
-    convenience init(name: CustomMediaTimingFunctionName, controlType: ControlType) {
-
+extension CAMediaTimingFunction {
+    convenience init(curveType: EasingCurveType, controlType: ControlType) {
         switch controlType {
-            
         case .`in`:
-            
-            switch name {
+            switch curveType {
             case .sine:
                 self.init(controlPoints: 0.45, 0.00, 1.00, 1.00)
             case .quad:
@@ -42,10 +40,8 @@ internal extension CAMediaTimingFunction {
             case .back:
                 self.init(controlPoints: 0.77,-0.63, 1.00, 1.00)
             }
-            
         case .out:
-            
-            switch name {
+            switch curveType {
             case .sine:
                 self.init(controlPoints: 0.00, 0.00, 0.55, 1.00)
             case .quad:
@@ -63,10 +59,8 @@ internal extension CAMediaTimingFunction {
             case .back:
                 self.init(controlPoints: 0.00, 0.00, 0.23, 1.37)
             }
-            
         case .inOut:
-            
-            switch name {
+            switch curveType {
             case .sine:
                 self.init(controlPoints: 0.45, 0.00, 0.55, 1.00)
             case .quad:
