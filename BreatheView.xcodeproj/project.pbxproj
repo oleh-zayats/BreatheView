@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831B3BF61FF628E40097DED5 /* CAMediaTimingFunction+CustomTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B3BF51FF628E40097DED5 /* CAMediaTimingFunction+CustomTypes.swift */; };
+		831B3BF81FF62FB30097DED5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B3BF71FF62FB30097DED5 /* UIColor+Hex.swift */; };
+		831B3BFA1FF630040097DED5 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B3BF91FF630040097DED5 /* CGRect+Center.swift */; };
+		831B3BFC1FF6301C0097DED5 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B3BFB1FF6301C0097DED5 /* Math.swift */; };
+		831B3C001FF636AA0097DED5 /* CGPoint+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B3BFF1FF636AA0097DED5 /* CGPoint+Hashable.swift */; };
 		83DF25021FF50A6F00D7493D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF25011FF50A6F00D7493D /* AppDelegate.swift */; };
 		83DF25041FF50A6F00D7493D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF25031FF50A6F00D7493D /* ViewController.swift */; };
 		83DF25071FF50A6F00D7493D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DF25051FF50A6F00D7493D /* Main.storyboard */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		831B3BF51FF628E40097DED5 /* CAMediaTimingFunction+CustomTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAMediaTimingFunction+CustomTypes.swift"; sourceTree = "<group>"; };
+		831B3BF71FF62FB30097DED5 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		831B3BF91FF630040097DED5 /* CGRect+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
+		831B3BFB1FF6301C0097DED5 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		831B3BFF1FF636AA0097DED5 /* CGPoint+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Hashable.swift"; sourceTree = "<group>"; };
 		83DF24FE1FF50A6F00D7493D /* BreatheView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreatheView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF25011FF50A6F00D7493D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83DF25031FF50A6F00D7493D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +69,11 @@
 				83DF25011FF50A6F00D7493D /* AppDelegate.swift */,
 				83DF25031FF50A6F00D7493D /* ViewController.swift */,
 				83DF25131FF50AE700D7493D /* BreatheView.swift */,
+				831B3BF51FF628E40097DED5 /* CAMediaTimingFunction+CustomTypes.swift */,
+				831B3BF71FF62FB30097DED5 /* UIColor+Hex.swift */,
+				831B3BFF1FF636AA0097DED5 /* CGPoint+Hashable.swift */,
+				831B3BF91FF630040097DED5 /* CGRect+Center.swift */,
+				831B3BFB1FF6301C0097DED5 /* Math.swift */,
 				83DF25051FF50A6F00D7493D /* Main.storyboard */,
 				83DF25081FF50A6F00D7493D /* Assets.xcassets */,
 				83DF250A1FF50A6F00D7493D /* LaunchScreen.storyboard */,
@@ -139,9 +154,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				831B3C001FF636AA0097DED5 /* CGPoint+Hashable.swift in Sources */,
+				831B3BFA1FF630040097DED5 /* CGRect+Center.swift in Sources */,
 				83DF25041FF50A6F00D7493D /* ViewController.swift in Sources */,
 				83DF25141FF50AE700D7493D /* BreatheView.swift in Sources */,
+				831B3BFC1FF6301C0097DED5 /* Math.swift in Sources */,
 				83DF25021FF50A6F00D7493D /* AppDelegate.swift in Sources */,
+				831B3BF61FF628E40097DED5 /* CAMediaTimingFunction+CustomTypes.swift in Sources */,
+				831B3BF81FF62FB30097DED5 /* UIColor+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
