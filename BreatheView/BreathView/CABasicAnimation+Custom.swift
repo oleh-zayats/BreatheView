@@ -15,8 +15,6 @@ extension CABasicAnimation {
         static let duration = 3.85
         static let timingFunction: CAMediaTimingFunction = .init(controlPoints: 0.43, 0.00, 0.57, 1.00)
         
-        /* MARK: - Main replicator animations
-         */
         enum ScaleDownAndReverse {
             static let key = "ScaleDownAndReverse"
             static var animation: CABasicAnimation {
@@ -58,35 +56,6 @@ extension CABasicAnimation {
                 movePosition.timingFunction = CABasicAnimation.Custom.timingFunction
                 movePosition.autoreverses = true
                 return movePosition
-            }
-        }
-        
-        /* MARK: - Ghost replicator animations
-         */
-        enum ScaleDownSlower {
-            static let key = "ScaleDownSlower"
-            static var animation: CABasicAnimation {
-                let transformScale = CABasicAnimation(keyPath: "transform.scale")
-                transformScale.fromValue = 1.0
-                transformScale.toValue = 0.5
-                transformScale.fillMode = kCAFillModeForwards
-                transformScale.duration = CABasicAnimation.Custom.duration + 1.0
-                transformScale.repeatDuration = .infinity
-                transformScale.timingFunction = CABasicAnimation.Custom.timingFunction
-                transformScale.isRemovedOnCompletion = false
-                return transformScale
-            }
-        }
-        
-        enum FadeOut {
-            static let key = "FadeOut"
-            static var animation: CABasicAnimation {
-                let decreaseOpacity = CABasicAnimation(keyPath: "opacity")
-                decreaseOpacity.fromValue = 1.0
-                decreaseOpacity.toValue = 0.0
-                decreaseOpacity.fillMode = kCAFillModeForwards
-                decreaseOpacity.duration = CABasicAnimation.Custom.duration/2
-                return decreaseOpacity
             }
         }
     }
