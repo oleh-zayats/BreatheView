@@ -7,27 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		831B3BF61FF628E40097DED5 /* CAMediaTimingFunction+CustomTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B3BF51FF628E40097DED5 /* CAMediaTimingFunction+CustomTypes.swift */; };
-		831B3BF81FF62FB30097DED5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B3BF71FF62FB30097DED5 /* UIColor+Hex.swift */; };
-		831B3BFA1FF630040097DED5 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B3BF91FF630040097DED5 /* CGRect+Center.swift */; };
-		831B3BFC1FF6301C0097DED5 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B3BFB1FF6301C0097DED5 /* Math.swift */; };
-		831B3C001FF636AA0097DED5 /* CGPoint+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B3BFF1FF636AA0097DED5 /* CGPoint+Hashable.swift */; };
-		83B894251FF66BE700BC94FD /* UIBezierPath+Clone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B894241FF66BE700BC94FD /* UIBezierPath+Clone.swift */; };
+		83BBC0F52132CD54001E70DA /* CABasicAnimation+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC0F32132CD54001E70DA /* CABasicAnimation+Custom.swift */; };
+		83BBC0F62132CD54001E70DA /* BreatheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC0F42132CD54001E70DA /* BreatheView.swift */; };
 		83DF25021FF50A6F00D7493D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF25011FF50A6F00D7493D /* AppDelegate.swift */; };
 		83DF25041FF50A6F00D7493D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF25031FF50A6F00D7493D /* ViewController.swift */; };
 		83DF25071FF50A6F00D7493D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DF25051FF50A6F00D7493D /* Main.storyboard */; };
 		83DF25091FF50A6F00D7493D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83DF25081FF50A6F00D7493D /* Assets.xcassets */; };
 		83DF250C1FF50A6F00D7493D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DF250A1FF50A6F00D7493D /* LaunchScreen.storyboard */; };
-		83DF25141FF50AE700D7493D /* BreatheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF25131FF50AE700D7493D /* BreatheView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		831B3BF51FF628E40097DED5 /* CAMediaTimingFunction+CustomTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAMediaTimingFunction+CustomTypes.swift"; sourceTree = "<group>"; };
-		831B3BF71FF62FB30097DED5 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
-		831B3BF91FF630040097DED5 /* CGRect+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
-		831B3BFB1FF6301C0097DED5 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
-		831B3BFF1FF636AA0097DED5 /* CGPoint+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Hashable.swift"; sourceTree = "<group>"; };
-		83B894241FF66BE700BC94FD /* UIBezierPath+Clone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Clone.swift"; sourceTree = "<group>"; };
+		83BBC0F32132CD54001E70DA /* CABasicAnimation+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CABasicAnimation+Custom.swift"; sourceTree = "<group>"; };
+		83BBC0F42132CD54001E70DA /* BreatheView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreatheView.swift; sourceTree = "<group>"; };
 		83DF24FE1FF50A6F00D7493D /* BreatheView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreatheView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF25011FF50A6F00D7493D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83DF25031FF50A6F00D7493D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,7 +26,6 @@
 		83DF25081FF50A6F00D7493D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83DF250B1FF50A6F00D7493D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83DF250D1FF50A6F00D7493D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83DF25131FF50AE700D7493D /* BreatheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83BBC0F22132CD54001E70DA /* BreathView */ = {
+			isa = PBXGroup;
+			children = (
+				83BBC0F32132CD54001E70DA /* CABasicAnimation+Custom.swift */,
+				83BBC0F42132CD54001E70DA /* BreatheView.swift */,
+			);
+			path = BreathView;
+			sourceTree = "<group>";
+		};
 		83DF24F51FF50A6F00D7493D = {
 			isa = PBXGroup;
 			children = (
@@ -70,14 +69,8 @@
 			children = (
 				83DF25011FF50A6F00D7493D /* AppDelegate.swift */,
 				83DF25031FF50A6F00D7493D /* ViewController.swift */,
-				83DF25131FF50AE700D7493D /* BreatheView.swift */,
-				831B3BF51FF628E40097DED5 /* CAMediaTimingFunction+CustomTypes.swift */,
-				831B3BF71FF62FB30097DED5 /* UIColor+Hex.swift */,
-				831B3BFF1FF636AA0097DED5 /* CGPoint+Hashable.swift */,
-				831B3BF91FF630040097DED5 /* CGRect+Center.swift */,
-				83B894241FF66BE700BC94FD /* UIBezierPath+Clone.swift */,
-				831B3BFB1FF6301C0097DED5 /* Math.swift */,
 				83DF25051FF50A6F00D7493D /* Main.storyboard */,
+				83BBC0F22132CD54001E70DA /* BreathView */,
 				83DF25081FF50A6F00D7493D /* Assets.xcassets */,
 				83DF250A1FF50A6F00D7493D /* LaunchScreen.storyboard */,
 				83DF250D1FF50A6F00D7493D /* Info.plist */,
@@ -157,15 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				831B3C001FF636AA0097DED5 /* CGPoint+Hashable.swift in Sources */,
-				831B3BFA1FF630040097DED5 /* CGRect+Center.swift in Sources */,
 				83DF25041FF50A6F00D7493D /* ViewController.swift in Sources */,
-				83DF25141FF50AE700D7493D /* BreatheView.swift in Sources */,
-				831B3BFC1FF6301C0097DED5 /* Math.swift in Sources */,
 				83DF25021FF50A6F00D7493D /* AppDelegate.swift in Sources */,
-				831B3BF61FF628E40097DED5 /* CAMediaTimingFunction+CustomTypes.swift in Sources */,
-				83B894251FF66BE700BC94FD /* UIBezierPath+Clone.swift in Sources */,
-				831B3BF81FF62FB30097DED5 /* UIColor+Hex.swift in Sources */,
+				83BBC0F62132CD54001E70DA /* BreatheView.swift in Sources */,
+				83BBC0F52132CD54001E70DA /* CABasicAnimation+Custom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
